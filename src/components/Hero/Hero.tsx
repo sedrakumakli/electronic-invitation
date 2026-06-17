@@ -43,7 +43,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -68,13 +68,30 @@ const Hero = () => {
             opacity: 0,
           }}
           transition={{
-            duration: 5,
-            ease: 'easeOut',
+            opacity: {
+              duration: 0.4,
+            },
+            scale: {
+              duration: 5,
+              ease: 'linear',
+            },
           }}
         />
-      </AnimatePresence>
 
-      <div className='absolute inset-0 bg-black/25' />
+        {/* <div
+          className={`absolute
+    left-1/2
+    top-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    h-[500px]
+    w-[500px]
+    rounded-full
+    bg-[#C4AEBA]/20
+    blur-[120px]`}
+        /> */}
+        <div className=' absolute inset-0 bg-gradient-to-b from-[#2E2A31]/20  via-[#715E72]/25 to-[#2E2A31]/45' />
+      </AnimatePresence>
     </section>
   );
 };
