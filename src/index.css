@@ -1,10 +1,14 @@
 @import 'tailwindcss';
+.font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
 :root {
   --primary: #715e72;
   --secondary: #b9a4b5;
   --accent: #c4aeba;
   --silver: #dad4df;
   --text: #2e2a31;
+  --golden: #e6c7a1;
 }
 body {
   font-family: 'Reem Kufi', sans-serif;
