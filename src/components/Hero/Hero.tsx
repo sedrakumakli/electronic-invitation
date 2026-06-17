@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
+import { FaGraduationCap } from 'react-icons/fa6';
 
 const desktopImages = [
   '/u14.jpg',
@@ -20,6 +21,30 @@ const mobileImages = [
   '/u17.jpg',
   '/u18.jpg',
 ];
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -69,7 +94,7 @@ const Hero = () => {
           }}
           transition={{
             opacity: {
-              duration: 0.4,
+              duration: 0.5,
             },
             scale: {
               duration: 5,
@@ -77,21 +102,82 @@ const Hero = () => {
             },
           }}
         />
-
-        {/* <div
-          className={`absolute
-    left-1/2
-    top-1/2
-    -translate-x-1/2
-    -translate-y-1/2
-    h-[500px]
-    w-[500px]
-    rounded-full
-    bg-[#C4AEBA]/20
-    blur-[120px]`}
-        /> */}
-        <div className=' absolute inset-0 bg-gradient-to-b from-[#2E2A31]/20  via-[#715E72]/25 to-[#2E2A31]/45' />
       </AnimatePresence>
+
+      {/* Overlay */}
+      <div className='absolute inset-0 z-10 bg-gradient-to-b from-[#2E2A31]/35 via-[#2E2A31]/50 to-[#2E2A31]/65' />
+
+      {/* Content */}
+      <motion.div
+        variants={containerVariants}
+        initial='hidden'
+        animate='show'
+        className='relative z-20 flex h-full flex-col items-center justify-center px-6 text-center'
+      >
+        <motion.p
+          variants={itemVariants}
+          className='mb-4 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+        >
+          <FaGraduationCap />
+          <span>class of 2026</span>
+        </motion.p>
+        {/* <motion.p
+          variants={itemVariants}
+          className='mb-4 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+        >
+          Graduation Project Defense
+        </motion.p> */}
+
+        <motion.h1
+          variants={itemVariants}
+          className='font-reef text-5xl text-white md:text-7xl lg:text-8xl'
+        >
+          المهندسة سلاف عبدالحليم الفارس
+        </motion.h1>
+
+        <motion.div
+          variants={itemVariants}
+          className=' my-6 h-px  text-(--accent)'
+        >
+          ──── ✦ ────
+        </motion.div>
+
+        <motion.h2
+          variants={itemVariants}
+          className='mb-4 text-xl text-[#F7F4F8] md:text-2xl'
+        >
+          دعوة لمناقشة مشروع التخرج
+        </motion.h2>
+
+        <motion.p
+          variants={itemVariants}
+          className='max-w-xl leading-8 text-[#DAD4DF]'
+        >
+          يسرني دعوتكم لحضور مناقشة مشروع تخرجي ومشاركة هذه اللحظة المميزة التي
+          تمثل بداية فصل جديد من رحلتي
+        </motion.p>
+
+        <motion.div
+          variants={itemVariants}
+          className='mt-10 space-y-2 text-[#F7F4F8]'
+        >
+          <p>الخميس 18 تموز 2026</p>
+          <p>كلية الهندسة المعلوماتية - جامعة حمص</p>
+        </motion.div>
+
+        <motion.div
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+          className='absolute bottom-10 text-3xl text-(--accent)'
+        >
+          ↓
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
