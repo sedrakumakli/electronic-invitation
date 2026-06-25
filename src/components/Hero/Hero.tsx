@@ -109,18 +109,12 @@ const Hero = () => {
       >
         <motion.p
           variants={itemVariants}
-          className='mb-4 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+          className='mb-1 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
           dir='ltr'
         >
           <FaGraduationCap className='text-(--golden)' />
-          <span>class of 2026</span>
+          <span>Class of 2026</span>
         </motion.p>
-        {/* <motion.p
-          variants={itemVariants}
-          className='mb-4 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
-        >
-          Graduation Project Defense
-        </motion.p> */}
 
         <motion.h1
           variants={itemVariants}
@@ -129,35 +123,34 @@ const Hero = () => {
           المهندسة سلاف عبدالحليم الفارس
         </motion.h1>
 
+        <motion.p
+          variants={itemVariants}
+          className='mt-4 text-lg text-[#DAD4DF] font-cairo'
+        >
+          ابنة نجوى نديم شربك
+        </motion.p>
+
         <motion.div
           variants={itemVariants}
-          className=' my-6 h-px  text-(--accent)'
+          className='my-4 mt-5 text-(--accent)'
         >
           ──── <span className='text-(--golden)'>✦</span> ────
         </motion.div>
 
-        <motion.h2
+        <motion.p
           variants={itemVariants}
-          className='mb-4 text-xl text-(--silver) md:text-2xl'
+          className='text-[#DAD4DF] font-cairo text-lg leading-8'
         >
-          يسرني دعوتكم لحضور مناقشة مشروع التخرج
-        </motion.h2>
+          تمّ بحمد الله وفضله تخرّجي من كلية الهندسة المعلوماتية – قسم البرمجيات
+        </motion.p>
 
-        {/* <motion.p
+        <motion.p
           variants={itemVariants}
-          className='max-w-xl leading-8 text-[#DAD4DF]'
+          className='mt-2 text-[#DAD4DF] font-cairo text-base leading-8 italic'
         >
-          يسرني دعوتكم لحضور مناقشة مشروع تخرجي ومشاركة هذه اللحظة المميزة التي
-          تمثل بداية فصل جديد من رحلتي
-        </motion.p> */}
-
-        <motion.div
-          variants={itemVariants}
-          className=' space-y-2 text-(--silver)'
-        >
-          <p>الخميس 18 تموز 2026</p>
-          <p>كلية الهندسة المعلوماتية - جامعة حمص</p>
-        </motion.div>
+          ولأن الأفراح لا تكتمل إلا بحضور من نحب، يسعدني ويشرفني دعوتكم لحضور
+          مناقشة مشروع تخرّجي
+        </motion.p>
 
         <motion.a
           variants={itemVariants}
