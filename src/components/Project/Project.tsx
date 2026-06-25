@@ -3,7 +3,7 @@ import Container from '../Container';
 import FeaturesList from './FeaturesList';
 import { useScreen } from '../../context/ScreenSizeContext';
 
-const ease = [0.22, 1, 0.36, 1];
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const container = {
   hidden: {},
@@ -26,12 +26,10 @@ const item = {
 const Project = () => {
   const { screenSize } = useScreen();
   const isDesktop = screenSize === 'desktop';
-  const isTablet = screenSize === 'tablet';
-  const isMobile = screenSize === 'mobile';
   return (
     <Container className='bg-[#F7F4F8] py-24 overflow-hidden'>
       {/* TOP SECTION */}
-      <div className='grid lg:grid-cols-2 gap-12 items-center'>
+      <div className='grid lg:grid-cols-2 gap-12 '>
         {/* TEXT */}
         <motion.div
           variants={container}
@@ -78,28 +76,26 @@ const Project = () => {
         </motion.div>
 
         {/* IMAGE */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease }}
-            className='relative'
-          >
-            {isDesktop && (
-              <img
-                src='/decorations.webp'
-                className='absolute w-[195px] top-[-62px] left-[-84px]'
-              />
-            )}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease }}
+          className='relative'
+        >
+          {isDesktop && (
             <img
-              src='/project.jpg'
-              className='w-full h-[450px] md:h-150 lg:h-[700px] object-cover rounded-2xl shadow-lg'
+              src='/decorations.webp'
+              className='absolute w-[195px] top-[-62px] left-[-84px]'
             />
+          )}
+          <img
+            src='/project.jpg'
+            className='w-full h-[450px] md:h-150 lg:h-150 object-cover rounded-2xl shadow-lg'
+          />
 
-            <div className='absolute inset-0 bg-gradient-to-t from-[#2E2A31]/30 to-transparent rounded-2xl' />
-          </motion.div>
-        </div>
+          <div className='absolute lg:h-150 inset-0 bg-gradient-to-t from-[#2E2A31]/30 to-transparent rounded-2xl' />
+        </motion.div>
       </div>
     </Container>
   );
