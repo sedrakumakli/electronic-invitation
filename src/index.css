@@ -2,6 +2,9 @@
 .font-cairo {
   font-family: 'Cairo', sans-serif;
 }
+.bg-gradient {
+  background: linear-gradient(180deg, #f7f4f8 0%, #ede7f0 100%);
+}
 :root {
   --primary: #715e72;
   --secondary: #b9a4b5;

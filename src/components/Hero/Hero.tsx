@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
 import { FaGraduationCap } from 'react-icons/fa6';
 import type { Variants } from 'framer-motion';
+import { useScreen } from '../../context/ScreenSizeContext';
 
 const desktopImages = [
   '/u14.jpg',
@@ -49,17 +50,8 @@ const itemVariants: Variants = {
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const { screenSize } = useScreen();
+  const isMobile = screenSize === 'mobile';
 
   const images = useMemo(
     () => (isMobile ? mobileImages : desktopImages),
@@ -113,11 +105,12 @@ const Hero = () => {
         variants={containerVariants}
         initial='hidden'
         animate='show'
-        className='relative z-20 flex h-full flex-col items-center justify-center px-6 text-center'
+        className='relative z-20 flex h-full flex-col items-center justify-center px-6 md:px-12 lg:px-24 text-center'
       >
         <motion.p
           variants={itemVariants}
           className='mb-4 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+          dir='ltr'
         >
           <FaGraduationCap className='text-(--golden)' />
           <span>class of 2026</span>
@@ -176,7 +169,7 @@ const Hero = () => {
             'كلية الهندسة المعلوماتية - جامعة حمص',
           )}`}
           target='_blank'
-          className='mt-6 inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
+          className='mt-6 inline-flex rounded-xl items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
         >
           إضافة إلى التقويم
         </motion.a>

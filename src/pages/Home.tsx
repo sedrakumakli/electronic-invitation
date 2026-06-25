@@ -1,6 +1,7 @@
 import Hero from '../components/Hero/Hero';
 import { useEffect, useRef, useState } from 'react';
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import Project from '../components/Project/Project';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
@@ -35,6 +36,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Project />
       <button
         onClick={toggleSound}
         className='
