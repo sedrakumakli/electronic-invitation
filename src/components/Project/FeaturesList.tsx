@@ -36,8 +36,8 @@ const FeaturesList = () => {
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 + i * 0.1 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
           className='flex gap-4'
         >
           {/* icon */}

@@ -146,11 +146,18 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className='mt-2 text-[#DAD4DF] font-cairo text-base leading-8 italic'
+          className='text-[#DAD4DF] font-cairo text-base leading-8 italic'
         >
           ولأن الأفراح لا تكتمل إلا بحضور من نحب، يسعدني ويشرفني دعوتكم لحضور
           مناقشة مشروع تخرّجي
         </motion.p>
+        <motion.div
+          variants={itemVariants}
+          className='mt-6 space-y-2 text-(--silver)'
+        >
+          <p>يوم الخميس 18 تموز 2026</p>
+          <p>كلية العلوم - جامعة حمص</p>
+        </motion.div>
 
         <motion.a
           variants={itemVariants}
