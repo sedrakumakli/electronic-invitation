@@ -127,7 +127,7 @@ const Hero = () => {
           variants={itemVariants}
           className='mt-4 text-lg text-[#DAD4DF] font-cairo'
         >
-          ابنة نجوى نديم شربك
+          والدتي نجوى نديم شربك
         </motion.p>
 
         <motion.div
@@ -139,21 +139,21 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className='text-[#DAD4DF] font-cairo text-lg leading-8'
+          className='text-[#fffc] font-cairo text-lg leading-8'
         >
-          تمّ بحمد الله وفضله تخرّجي من كلية الهندسة المعلوماتية – قسم البرمجيات
+          أتشرف بدعوتكم لحضور مناقشة مشروع تخرّجي الذي أعد لنيل درجة الإجازة في
+          الهندسة المعلوماتية بعنوان
         </motion.p>
 
         <motion.p
           variants={itemVariants}
-          className='text-[#DAD4DF] font-cairo text-base leading-8 italic'
+          className='text-[#fffc] font-cairo text-base leading-8 italic'
         >
-          ولأن الأفراح لا تكتمل إلا بحضور من نحب، يسعدني ويشرفني دعوتكم لحضور
-          مناقشة مشروع تخرّجي
+          نظام إدارة حملات التبرع - أثر
         </motion.p>
         <motion.div
           variants={itemVariants}
-          className='mt-6 space-y-2 text-(--silver)'
+          className='mt-6 space-y-2 text-[#fffc]'
         >
           <p>يوم الخميس 18 تموز 2026</p>
           <p>كلية العلوم - جامعة حمص</p>

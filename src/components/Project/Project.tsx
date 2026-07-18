@@ -55,7 +55,7 @@ const Project = () => {
             variants={item}
             className='font-reef text-4xl md:text-6xl leading-tight text-[#2E2A31]'
           >
-            نظام إدارة حملات التبرع
+            منصة أثر لإدارة حملات التبرع
           </motion.h2>
 
           <motion.p

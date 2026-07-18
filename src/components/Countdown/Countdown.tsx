@@ -56,7 +56,7 @@ const Countdown = () => {
       <div
         className="
           absolute inset-0
-          bg-[url('/texture1.jpg')]
+          bg-[url('/texture.jpg')]
           bg-cover
           bg-center
           scale-110
