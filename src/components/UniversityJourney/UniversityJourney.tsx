@@ -117,7 +117,7 @@ const UniversityJourney = () => {
               رحلة تركت أثرها في قلبي
             </motion.h2>
 
-            <div className='my-4 mt-5 text-(--accent)'>
+            <div className='my-4 mt-5 text-(--accent) lg:hidden'>
               ──── <span className='text-(--golden)'>✦</span> ────
             </div>
 
@@ -162,7 +162,7 @@ const UniversityJourney = () => {
               hover:shadow-lg
               '
             >
-              إلى عالمي البرمجي
+              اكتشف عالمي البرمجي
             </motion.a>
           </motion.div>
         </div>
