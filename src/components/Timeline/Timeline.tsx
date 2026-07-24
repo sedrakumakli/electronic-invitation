@@ -65,7 +65,7 @@ const Timeline = () => {
     <section className='bg-[#F7F4F8] py-24 overflow-hidden'>
       <Container>
         {/* HEADER */}
-        <motion.div
+        {/*  <motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -86,7 +86,7 @@ const Timeline = () => {
           <h2 className='mt-4 font-reef text-4xl md:text-6xl text-[#2E2A31]'>
             رحلة من الحلم إلى الإنجاز
           </h2>
-        </motion.div>
+        </motion.div> */}
 
         {/* DESKTOP */}
         <div className='hidden lg:block relative'>

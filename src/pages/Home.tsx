@@ -5,6 +5,7 @@ import Project from '../components/Project/Project';
 import Countdown from '../components/Countdown/Countdown';
 import EventInfo from '../components/EventInfo/EventInfo';
 import Timeline from '../components/Timeline/Timeline';
+import UniversityJourney from '../components/UniversityJourney/UniversityJourney';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
@@ -42,6 +43,7 @@ const Home = () => {
       <EventInfo />
       <Project />
       <Countdown />
+      <UniversityJourney />
       <Timeline />
       <button
         onClick={toggleSound}
