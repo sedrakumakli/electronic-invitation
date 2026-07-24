@@ -24,7 +24,7 @@ const info = [
   {
     icon: <FiMapPin />,
     title: 'القاعة',
-    value: 'قاعة المحاضرات - بناء كلية العلوم',
+    value: 'القاعة العاشرة - بناء كلية العلوم',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function EventInfo() {
   const isDesktop = screenSize === 'desktop';
 
   return (
-    <section className='bg-[#F7F4F8] py-24 overflow-hidden'>
+    <section id='event-info' className='bg-[#F7F4F8] py-24 overflow-hidden'>
       <Container>
         <div className='grid lg:grid-cols-2 gap-12 items-center'>
           {/* LEFT */}

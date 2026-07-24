@@ -155,18 +155,21 @@ const Hero = () => {
           variants={itemVariants}
           className='mt-6 space-y-2 text-[#fffc]'
         >
-          <p>يوم الخميس 18 تموز 2026</p>
-          <p>كلية العلوم - جامعة حمص</p>
+          <p>يوم الأحد 30 آب 2026</p>
+          <p>كلية الهندسة المعلوماتية - جامعة حمص</p>
         </motion.div>
 
         <motion.a
           variants={itemVariants}
-          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-            'مناقشة مشروع التخرج - سلاف الفارس',
-          )}&dates=20260718T080000Z/20260718T100000Z&details=${encodeURIComponent(
-            'مناقشة مشروع التخرج',
-          )}&location=${encodeURIComponent(
-            'كلية الهندسة المعلوماتية - جامعة حمص',
+          href={`https://www.google.com/calendar/render?action=TEMPLATE
+&text=${encodeURIComponent('مناقشة مشروع تخرج - سلاف الفارس')}
+&dates=20260830T110000/20260830T120000
+&ctz=Asia/Damascus
+&details=${encodeURIComponent(
+            'مناقشة مشروع التخرج بعنوان: نظام إدارة حملات التبرع - أثر',
+          )}
+&location=${encodeURIComponent(
+            'القاعة العاشرة - كلية الهندسة المعلوماتية (مبنى كلية العلوم) - جامعة حمص',
           )}`}
           target='_blank'
           className='mt-6 inline-flex rounded-xl items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
@@ -174,7 +177,7 @@ const Hero = () => {
           إضافة إلى التقويم
         </motion.a>
 
-        <motion.div
+        <motion.a
           animate={{
             y: [0, 10, 0],
           }}
@@ -183,9 +186,10 @@ const Hero = () => {
             repeat: Infinity,
           }}
           className='absolute bottom-10 text-3xl text-(--golden)'
+          href='#event-info'
         >
           ↓
-        </motion.div>
+        </motion.a>
       </motion.div>
     </section>
   );

@@ -16,3 +16,6 @@
 body {
   font-family: 'Reem Kufi', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}

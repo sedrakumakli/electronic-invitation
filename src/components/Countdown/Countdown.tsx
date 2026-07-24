@@ -81,7 +81,8 @@ const Countdown = () => {
               custom={i}
               variants={item}
               initial='hidden'
-              animate='show'
+              whileInView='show'
+              viewport={{ once: true, amount: 0.4 }}
               className='flex flex-col items-center justify-center'
             >
               {/* NUMBER */}

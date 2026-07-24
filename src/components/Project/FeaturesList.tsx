@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { MdCampaign } from 'react-icons/md';
 import {
   FaChartLine,
@@ -29,33 +29,57 @@ const features = [
   },
 ];
 
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: 'easeOut',
+    },
+  },
+};
+
 const FeaturesList = () => {
   return (
-    <div className='mt-6 grid sm:grid-cols-2 gap-6'>
-      {features.map((item, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-          className='flex gap-4'
-        >
+    <motion.div
+      variants={container}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true, amount: 0.3 }}
+      className='mt-6 grid gap-6 sm:grid-cols-2'
+    >
+      {features.map((feature, i) => (
+        <motion.div key={i} variants={item} className='flex gap-4'>
           {/* icon */}
-          <div className='text-2xl text-(--golden) mt-1'>{item.icon}</div>
+          <div className='mt-1 text-2xl text-(--golden)'>{feature.icon}</div>
 
           {/* text */}
           <div className='space-y-1'>
-            <h3 className='font-semibold text-[#2E2A31] font-cairo'>
-              {item.title}
+            <h3 className='font-cairo font-semibold text-[#2E2A31]'>
+              {feature.title}
             </h3>
 
-            <p className='text-sm leading-7 text-[#6E6773] font-cairo max-w-sm'>
-              {item.desc}
+            <p className='max-w-sm font-cairo text-sm leading-7 text-[#6E6773]'>
+              {feature.desc}
             </p>
           </div>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
