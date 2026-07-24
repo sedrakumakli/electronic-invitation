@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FaGraduationCap } from 'react-icons/fa6';
 import Container from '../Container';
 
-const TARGET_DATE = new Date('2026-08-26T10:00:00');
+const TARGET_DATE = new Date('2026-08-30T11:00:00+03:00');
 
 const getTimeLeft = () => {
   const now = new Date().getTime();
