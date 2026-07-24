@@ -125,7 +125,7 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className='mt-4 text-lg text-[#DAD4DF] font-cairo'
+          className='mt-4 text-lg text-[#fffc] font-cairo'
         >
           والدتي نجوى نديم شربك
         </motion.p>

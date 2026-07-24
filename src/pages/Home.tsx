@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import Project from '../components/Project/Project';
 import Countdown from '../components/Countdown/Countdown';
+import EventInfo from '../components/EventInfo/EventInfo';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
@@ -37,6 +38,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <EventInfo />
       <Project />
       <Countdown />
       <button

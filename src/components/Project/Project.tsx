@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import Container from '../Container';
 import FeaturesList from './FeaturesList';
 import { useScreen } from '../../context/ScreenSizeContext';
+import Container from '../Container';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -28,8 +28,7 @@ const Project = () => {
   const isDesktop = screenSize === 'desktop';
   return (
     <Container className='bg-[#F7F4F8] py-24 overflow-hidden'>
-      {/* TOP SECTION */}
-      <div className='grid lg:grid-cols-2 gap-12 '>
+      <div className='grid lg:grid-cols-2 gap-12'>
         {/* TEXT */}
         <motion.div
           variants={container}
@@ -80,7 +79,7 @@ const Project = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease }}
-          className='relative'
+          className='relative h-130'
         >
           {isDesktop && (
             <img
@@ -90,10 +89,10 @@ const Project = () => {
           )}
           <img
             src='/project.jpg'
-            className='w-full h-[450px] md:h-150 lg:h-150 object-cover rounded-2xl shadow-lg'
+            className='w-full h-full object-cover rounded-2xl shadow-lg'
           />
 
-          <div className='absolute lg:h-150 inset-0 bg-gradient-to-t from-[#2E2A31]/30 to-transparent rounded-2xl' />
+          <div className='absolute lg:h-full inset-0 bg-gradient-to-t from-[#2E2A31]/30 to-transparent rounded-2xl' />
         </motion.div>
       </div>
     </Container>
