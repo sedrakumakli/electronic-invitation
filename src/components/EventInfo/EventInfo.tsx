@@ -52,11 +52,11 @@ export default function EventInfo() {
               />
             )}
 
-            <span className='uppercase tracking-[0.35em] text-sm text-[#b9a4b5]'>
+            <span className='text-sm tracking-[0.3em] text-[#b9a4b5] uppercase'>
               تفاصيل المناقشة
             </span>
 
-            <h2 className='font-reef text-4xl md:text-6xl text-[#2E2A31] leading-tight'>
+            <h2 className='font-reef text-4xl md:text-6xl leading-tight text-[#2E2A31]'>
               وجودكم يعني لي الكثير
             </h2>
 
@@ -79,7 +79,7 @@ export default function EventInfo() {
                   viewport={{ once: true }}
                   className='flex items-start gap-4'
                 >
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-[#715E72]/10 text-(--golden) text-xl shrink-0'>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-(--golden)/20 text-(--golden) text-xl shrink-0'>
                     {item.icon}
                   </div>
 
