@@ -53,7 +53,7 @@ const UniversityJourney = () => {
               alt='University journey'
               className='
                 w-full
-                h-[450px]
+                h-[400px]
                 lg:h-[550px]
                 object-cover
                 rounded-2xl

@@ -79,7 +79,7 @@ const Project = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease }}
-          className='relative h-130'
+          className='relative h-[400px] lg:h-130'
         >
           {isDesktop && (
             <img

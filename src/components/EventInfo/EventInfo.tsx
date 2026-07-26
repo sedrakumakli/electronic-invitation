@@ -108,7 +108,7 @@ export default function EventInfo() {
           >
             <img
               src='/collage.png'
-              className='rounded-3xl w-full h-[520px] object-cover shadow-xl'
+              className='rounded-3xl w-full h-[400px] lg:h-[520px] object-cover shadow-xl'
             />
 
             <div className='absolute inset-0 rounded-3xl bg-gradient-to-t from-[#2E2A31]/25 to-transparent' />
