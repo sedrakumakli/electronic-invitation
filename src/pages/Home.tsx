@@ -7,12 +7,14 @@ import EventInfo from '../components/EventInfo/EventInfo';
 import Timeline from '../components/Timeline/Timeline';
 import UniversityJourney from '../components/UniversityJourney/UniversityJourney';
 import Footer from '../components/Footer';
+import EnvelopeOpening from '../components/Envelope/EnvelopeOpening';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
 const Home = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   useEffect(() => {
     audioRef.current = new Audio(audio);
@@ -40,6 +42,9 @@ const Home = () => {
   };
   return (
     <>
+      {!envelopeOpened && (
+        <EnvelopeOpening onComplete={() => setEnvelopeOpened(true)} />
+      )}
       <Hero />
       <EventInfo />
       <Project />
