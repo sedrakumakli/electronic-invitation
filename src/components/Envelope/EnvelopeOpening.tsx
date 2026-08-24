@@ -4,13 +4,22 @@ import { motion } from 'framer-motion';
 const STAMP_IMAGE =
   'https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAzL3Jhd3BpeGVsX29mZmljZV80MV92aW50YWdlX3Bvc3RhZ2Vfc3RhbXBfYXV0aGVudGljX3BhcGVyX2lzb2xhdF8wNGZhYTFhZC02MGE5LTQxYzItYWM2Ni02NWUzZGM3ODQ5OTEucG5n.png';
 
-const EnvelopeOpening = ({ onComplete }: { onComplete: () => void }) => {
+const EnvelopeOpening = ({
+  onOpen,
+  onComplete,
+}: {
+  onOpen: () => void;
+  onComplete: () => void;
+}) => {
   const [isOpening, setIsOpening] = useState(false);
 
   const handleOpen = () => {
     if (isOpening) return;
 
     setIsOpening(true);
+
+    // تشغيل الموسيقى مباشرة مع ضغطة فتح الظرف
+    onOpen();
 
     // بعد انتهاء حركة فتح الظرف
     setTimeout(() => {

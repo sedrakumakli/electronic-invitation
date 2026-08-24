@@ -8,6 +8,7 @@ import Timeline from '../components/Timeline/Timeline';
 import UniversityJourney from '../components/UniversityJourney/UniversityJourney';
 import Footer from '../components/Footer';
 import EnvelopeOpening from '../components/Envelope/EnvelopeOpening';
+import GraduationMemories from '../components/GraduationMemories/GraduationMemories';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
@@ -15,6 +16,17 @@ const Home = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
+
+  const startSound = async () => {
+    if (!audioRef.current) return;
+
+    try {
+      await audioRef.current.play();
+      setIsPlaying(true);
+    } catch (error) {
+      console.error('Could not play audio:', error);
+    }
+  };
 
   useEffect(() => {
     audioRef.current = new Audio(audio);
@@ -43,7 +55,10 @@ const Home = () => {
   return (
     <>
       {!envelopeOpened && (
-        <EnvelopeOpening onComplete={() => setEnvelopeOpened(true)} />
+        <EnvelopeOpening
+          onOpen={startSound}
+          onComplete={() => setEnvelopeOpened(true)}
+        />
       )}
       <Hero />
       <EventInfo />
@@ -51,6 +66,7 @@ const Home = () => {
       <Countdown />
       <UniversityJourney />
       <Timeline />
+      <GraduationMemories />
       <Footer />
       <button
         onClick={toggleSound}
