@@ -1,15 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import {
-  FaCamera,
-  FaHeart,
-  FaImage,
-  FaPaperPlane,
-  FaRegFaceSmile,
-  FaUpload,
-  FaXmark,
-} from 'react-icons/fa6';
+import { FaCamera, FaHeart, FaPaperPlane, FaXmark } from 'react-icons/fa6';
 import Container from '../Container';
 
 declare global {
