@@ -517,7 +517,8 @@ const GraduationMemories = () => {
                 <button
                   type='button'
                   onClick={openUploadWidget}
-                  disabled={images.length >= 6}
+                  disabled={true}
+                  /* disabled={images.length >= 6} */
                   className='
                     flex
                     min-h-[110px]
