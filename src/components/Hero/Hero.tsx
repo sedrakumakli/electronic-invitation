@@ -5,23 +5,23 @@ import type { Variants } from 'framer-motion';
 import { useScreen } from '../../context/ScreenSizeContext';
 
 const desktopImages = [
-  '/u14.jpg',
-  '/u16.jpg',
-  '/u9.jpg',
-  '/u10.jpg',
-  '/u12.jpg',
-  '/u17.jpg',
-  '/u18.jpg',
+  '/u14.webp',
+  '/u16.webp',
+  '/u9.webp',
+  '/u10.webp',
+  '/u12.webp',
+  '/u17.webp',
+  '/u18.webp',
 ];
 
 const mobileImages = [
-  '/u14.jpg',
-  '/u15.jpg',
-  '/u9.jpg',
-  '/u11.jpg',
-  '/u12.jpg',
-  '/u17.jpg',
-  '/u18.jpg',
+  '/u14.webp',
+  '/u15.webp',
+  '/u9.webp',
+  '/u11.webp',
+  '/u12.webp',
+  '/u17.webp',
+  '/u18.webp',
 ];
 
 const containerVariants: Variants = {
@@ -38,6 +38,7 @@ const itemVariants: Variants = {
     opacity: 0,
     y: 20,
   },
+
   show: {
     opacity: 1,
     y: 0,
@@ -50,7 +51,10 @@ const itemVariants: Variants = {
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
+
   const { screenSize } = useScreen();
+
   const isMobile = screenSize === 'mobile';
 
   const images = useMemo(
@@ -58,22 +62,81 @@ const Hero = () => {
     [isMobile],
   );
 
+  /*
+   * Preload image
+   */
+  const preloadImage = (src: string) => {
+    return new Promise<void>((resolve) => {
+      const img = new Image();
+
+      img.onload = () => {
+        setLoadedImages((prev) => (prev.includes(src) ? prev : [...prev, src]));
+
+        resolve();
+      };
+
+      img.onerror = () => {
+        resolve();
+      };
+
+      img.src = src;
+    });
+  };
+
+  /*
+   * Load first image immediately
+   */
+  useEffect(() => {
+    setCurrent(0);
+    setLoadedImages([]);
+
+    preloadImage(images[0]);
+  }, [images]);
+
+  /*
+   * Load next image in the background
+   *
+   * We only preload ONE image ahead.
+   * This is important for slow internet.
+   */
+  useEffect(() => {
+    const nextIndex = (current + 1) % images.length;
+    const nextImage = images[nextIndex];
+
+    if (!loadedImages.includes(nextImage)) {
+      preloadImage(nextImage);
+    }
+  }, [current, images, loadedImages]);
+
+  /*
+   * Change image only when the next image
+   * has actually finished loading.
+   */
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      const nextIndex = (current + 1) % images.length;
+      const nextImage = images[nextIndex];
+
+      if (loadedImages.includes(nextImage)) {
+        setCurrent(nextIndex);
+      }
     }, 4500);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [current, images, loadedImages]);
+
+  const currentImage = images[current];
 
   return (
     <section className='relative h-[100svh] min-h-[600px] overflow-hidden'>
       {/* BACKGROUND SLIDER */}
       <AnimatePresence mode='sync'>
         <motion.img
-          key={images[current]}
-          src={images[current]}
+          key={currentImage}
+          src={currentImage}
           alt=''
+          fetchPriority={current === 0 ? 'high' : 'auto'}
+          decoding='async'
           className='absolute inset-0 h-full w-full object-cover'
           initial={{
             opacity: 0,
@@ -205,24 +268,7 @@ const Hero = () => {
               ease: 'easeInOut',
             },
           }}
-          className='
-            absolute
-            bottom-6
-            left-1/2
-            -translate-x-1/2
-            flex
-            flex-col
-            items-center
-            gap-1
-            font-cairo
-            text-xs
-            text-white/85
-            transition-opacity
-            duration-300
-            hover:text-white
-            md:bottom-8
-            md:text-sm
-          '
+          className='absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-1 font-cairo text-xs text-white/85 transition-opacity duration-300 hover:text-white md:bottom-8 md:text-sm'
         >
           <span>مرّر للأسفل</span>
 
