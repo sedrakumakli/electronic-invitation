@@ -68,6 +68,7 @@ const Hero = () => {
 
   return (
     <section className='relative h-screen overflow-hidden'>
+      {/* BACKGROUND SLIDER */}
       <AnimatePresence mode='sync'>
         <motion.img
           key={images[current]}
@@ -97,25 +98,27 @@ const Hero = () => {
         />
       </AnimatePresence>
 
-      {/* Overlay */}
+      {/* OVERLAY */}
       <div className='absolute inset-0 z-10 bg-linear-to-b from-[#2E2A31]/35 via-[#2E2A31]/50 to-[#2E2A31]/65' />
 
-      {/* Content */}
+      {/* CONTENT */}
       <motion.div
         variants={containerVariants}
         initial='hidden'
         animate='show'
-        className='relative z-20 flex h-full flex-col items-center justify-center px-6 md:px-12 lg:px-24 text-center'
+        className='relative z-20 flex h-full flex-col items-center justify-center px-6 text-center md:px-12 lg:px-24'
       >
+        {/* CLASS */}
         <motion.p
           variants={itemVariants}
-          className='mb-1 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+          className='mb-1 flex items-center justify-center gap-2 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
           dir='ltr'
         >
           <FaGraduationCap className='text-(--golden)' />
           <span>Class of 2026</span>
         </motion.p>
 
+        {/* NAME */}
         <motion.h1
           variants={itemVariants}
           className='font-reef text-5xl text-white md:text-7xl lg:text-8xl'
@@ -123,13 +126,15 @@ const Hero = () => {
           المهندسة سلاف عبدالحليم الفارس
         </motion.h1>
 
+        {/* MOTHER */}
         <motion.p
           variants={itemVariants}
-          className='mt-4 text-lg text-[#fffc] font-cairo'
+          className='mt-4 font-cairo text-lg text-[#fffc]'
         >
           والدتي نجوى نديم شربك
         </motion.p>
 
+        {/* DECORATION */}
         <motion.div
           variants={itemVariants}
           className='my-4 mt-5 text-(--accent)'
@@ -137,58 +142,93 @@ const Hero = () => {
           ──── <span className='text-(--golden)'>✦</span> ────
         </motion.div>
 
+        {/* INVITATION */}
         <motion.p
           variants={itemVariants}
-          className='text-[#fffc] font-cairo text-lg leading-8'
+          className='font-cairo text-lg leading-8 text-[#fffc]'
         >
           أتشرف بدعوتكم لحضور مناقشة مشروع تخرّجي الذي أعد لنيل درجة الإجازة في
           الهندسة المعلوماتية بعنوان
         </motion.p>
 
+        {/* PROJECT TITLE */}
         <motion.p
           variants={itemVariants}
-          className='text-[#fffc] font-cairo text-base leading-8 italic'
+          className='font-cairo text-base leading-8 italic text-[#fffc]'
         >
           نظام إدارة حملات التبرع - أثر
         </motion.p>
+
+        {/* EVENT DETAILS */}
         <motion.div
           variants={itemVariants}
-          className='mt-6 space-y-2 text-[#fffc]'
+          className='mt-6 space-y-2 font-cairo text-[#fffc]'
         >
           <p>يوم الأحد 30 آب 2026</p>
           <p>كلية الهندسة المعلوماتية - جامعة حمص</p>
         </motion.div>
 
+        {/* ADD TO CALENDAR */}
         <motion.a
           variants={itemVariants}
-          href={`https://www.google.com/calendar/render?action=TEMPLATE
-&text=${encodeURIComponent('مناقشة مشروع تخرج - سلاف الفارس')}
-&dates=20260830T110000/20260830T120000
-&ctz=Asia/Damascus
-&details=${encodeURIComponent(
+          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+            'مناقشة مشروع تخرج - سلاف الفارس',
+          )}&dates=20260830T110000/20260830T120000&ctz=Asia/Damascus&details=${encodeURIComponent(
             'مناقشة مشروع التخرج بعنوان: نظام إدارة حملات التبرع - أثر',
-          )}
-&location=${encodeURIComponent(
+          )}&location=${encodeURIComponent(
             'القاعة العاشرة - كلية الهندسة المعلوماتية (مبنى كلية العلوم) - جامعة حمص',
           )}`}
           target='_blank'
-          className='mt-6 inline-flex rounded-xl items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
+          rel='noopener noreferrer'
+          className='mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#715E72]/80 px-8 py-3 font-cairo font-semibold tracking-wide text-[#F7F4F8] transition-all duration-300 hover:scale-[1.03] hover:bg-[#715E72]/90 hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
         >
           إضافة إلى التقويم
         </motion.a>
 
+        {/* SCROLL INDICATOR */}
         <motion.a
+          href='#event-info'
+          initial={{ opacity: 0 }}
           animate={{
-            y: [0, 10, 0],
+            opacity: 1,
+            y: [0, 7, 0],
           }}
           transition={{
-            duration: 2,
-            repeat: Infinity,
+            opacity: {
+              delay: 1.8,
+              duration: 0.8,
+            },
+            y: {
+              delay: 1.8,
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            },
           }}
-          className='absolute bottom-10 text-3xl text-(--golden)'
-          href='#event-info'
+          className='
+            absolute
+            bottom-6
+            left-1/2
+            -translate-x-1/2
+            flex
+            flex-col
+            items-center
+            gap-1
+            font-cairo
+            text-xs
+            text-white/85
+            transition-opacity
+            duration-300
+            hover:text-white
+            md:bottom-8
+            md:text-sm
+          '
         >
-          ↓
+          <span>مرّر للأسفل</span>
+
+          <span className='text-xl leading-none text-(--golden) md:text-2xl'>
+            ↓
+          </span>
         </motion.a>
       </motion.div>
     </section>

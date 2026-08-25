@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const STAMP_IMAGE =
-  'https://images.rawpixel.com/image_png_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAzL3Jhd3BpeGVsX29mZmljZV80MV92aW50YWdlX3Bvc3RhZ2Vfc3RhbXBfYXV0aGVudGljX3BhcGVyX2lzb2xhdF8wNGZhYTFhZC02MGE5LTQxYzItYWM2Ni02NWUzZGM3ODQ5OTEucG5n.png';
+const STAMP_IMAGE = '/stamp.jpg';
 
 const EnvelopeOpening = ({
   onOpen,
@@ -248,7 +247,7 @@ const EnvelopeOpening = ({
           CLICK HINT
       ========================================= */}
 
-      <motion.div
+      <div
         className="
           absolute
           bottom-[7%]
@@ -263,19 +262,9 @@ const EnvelopeOpening = ({
           text-[#806e5d]
           sm:text-[13px]
         "
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: isOpening ? 0 : 0.75,
-        }}
-        transition={{
-          delay: 0.8,
-          duration: 0.7,
-        }}
       >
         اضغطي لفتح الدعوة
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
