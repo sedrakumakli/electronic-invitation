@@ -111,7 +111,7 @@ const Hero = () => {
         {/* CLASS */}
         <motion.p
           variants={itemVariants}
-          className='mb-1 flex items-center justify-center gap-2 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
+          className='mb-1 text-sm tracking-[0.3em] text-[#DAD4DF] uppercase'
           dir='ltr'
         >
           <FaGraduationCap className='text-(--golden)' />
