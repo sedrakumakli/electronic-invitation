@@ -54,23 +54,24 @@ const Home = () => {
   };
   return (
     <>
-      {!envelopeOpened && (
+      {!envelopeOpened ? (
         <EnvelopeOpening
           onOpen={startSound}
           onComplete={() => setEnvelopeOpened(true)}
         />
-      )}
-      <Hero />
-      <EventInfo />
-      <Project />
-      <Countdown />
-      <UniversityJourney />
-      <Timeline />
-      <GraduationMemories />
-      <Footer />
-      <button
-        onClick={toggleSound}
-        className='
+      ) : (
+        <>
+          <Hero />
+          <EventInfo />
+          <Project />
+          <Countdown />
+          <UniversityJourney />
+          <Timeline />
+          <GraduationMemories />
+          <Footer />
+          <button
+            onClick={toggleSound}
+            className='
     fixed
     bottom-6
     right-6
@@ -87,9 +88,11 @@ const Home = () => {
     hover:scale-110
     z-50
   '
-      >
-        {isPlaying ? <FaVolumeUp /> : <FaVolumeMute />}
-      </button>
+          >
+            {isPlaying ? <FaVolumeUp /> : <FaVolumeMute />}
+          </button>
+        </>
+      )}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaCamera, FaHeart, FaPaperPlane, FaXmark } from 'react-icons/fa6';
+import { FaCamera, FaHeart, FaXmark } from 'react-icons/fa6';
 import Container from '../Container';
 
 declare global {
@@ -677,7 +677,8 @@ const GraduationMemories = () => {
               <motion.div variants={itemVariants}>
                 <button
                   type='submit'
-                  disabled={isSending}
+                  disabled={true}
+                  /* disabled={isSending} */
                   className='
                     inline-flex
                     w-full
@@ -700,10 +701,11 @@ const GraduationMemories = () => {
                     disabled:opacity-60
                   '
                 >
-                  {isSending ? (
-                    <>
-                      <span
-                        className='
+                  {
+                    isSending ? (
+                      <>
+                        <span
+                          className='
                         h-4
                         w-4
                         animate-spin
@@ -711,15 +713,19 @@ const GraduationMemories = () => {
                         border-2
                         border-white/30
                         border-t-white'
-                      />
-                      جاري الإرسال...
-                    </>
-                  ) : (
+                        />
+                        جاري الإرسال...
+                      </>
+                    ) : (
+                      <>بانتظار ذكرياتكم بعد المناقشة 🩶</>
+                    )
+                    /*  (
                     <>
                       <FaPaperPlane />
                       أرسل الذكرى
                     </>
-                  )}
+                  ) */
+                  }
                 </button>
               </motion.div>
             </form>

@@ -177,7 +177,7 @@ const Hero = () => {
           إضافة إلى التقويم
         </motion.a>
 
-        <motion.a
+        <motion.div
           animate={{
             y: [0, 10, 0],
           }}
@@ -185,11 +185,13 @@ const Hero = () => {
             duration: 2,
             repeat: Infinity,
           }}
-          className='absolute bottom-10 text-3xl text-(--golden)'
-          href='#event-info'
+          className='absolute bottom-10 text-white font-cairo'
         >
-          ↓
-        </motion.a>
+          <p>مرر للأسفل</p>
+          <a className='text-3xl text-(--golden)' href='#event-info'>
+            ↓
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   );
