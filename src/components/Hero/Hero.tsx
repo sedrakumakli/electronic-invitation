@@ -172,12 +172,12 @@ const Hero = () => {
             'القاعة العاشرة - كلية الهندسة المعلوماتية (مبنى كلية العلوم) - جامعة حمص',
           )}`}
           target='_blank'
-          className='mt-6 xs:mb-8 inline-flex rounded-xl items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
+          className='mt-6 inline-flex rounded-xl items-center justify-center gap-2 px-8 py-3 bg-[#715E72]/80 text-[#F7F4F8] font-cairo font-semibold tracking-wide transition-all duration-300 hover:bg-[#715E72]/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
         >
           إضافة إلى التقويم
         </motion.a>
 
-        <motion.div
+        <motion.a
           animate={{
             y: [0, 10, 0],
           }}
@@ -185,13 +185,11 @@ const Hero = () => {
             duration: 2,
             repeat: Infinity,
           }}
-          className='absolute bottom-10 text-white font-cairo'
+          className='absolute bottom-10 text-3xl text-(--golden)'
+          href='#event-info'
         >
-          <p>مرر للأسفل</p>
-          <a className='text-3xl text-(--golden)' href='#event-info'>
-            ↓
-          </a>
-        </motion.div>
+          ↓
+        </motion.a>
       </motion.div>
     </section>
   );
