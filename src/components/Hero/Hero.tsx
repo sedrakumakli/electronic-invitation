@@ -67,7 +67,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className='relative h-screen overflow-hidden'>
+    <section className='relative h-[100svh] min-h-[600px] overflow-hidden'>
       {/* BACKGROUND SLIDER */}
       <AnimatePresence mode='sync'>
         <motion.img
