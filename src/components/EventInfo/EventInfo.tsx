@@ -134,15 +134,17 @@ export default function EventInfo() {
           </div>
 
           <div className='flex justify-center mt-8'>
-            <a
-              href='https://maps.google.com'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-flex items-center gap-3 rounded-xl bg-[#715E72] px-7 py-3 text-white font-cairo transition-all duration-300 hover:scale-105 hover:bg-[#604e61]'
-            >
-              <FiNavigation />
-              الحصول على الاتجاهات
-            </a>
+            <div className='flex justify-center mt-8'>
+              <a
+                href='https://www.google.com/maps/dir/?api=1&destination=القاعة%20العاشرة%20-%20كلية%20الهندسة%20المعلوماتية%20-%20مبنى%20كلية%20العلوم%20-%20جامعة%20حمص'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center gap-3 rounded-xl bg-[#715E72] px-7 py-3 text-white font-cairo transition-all duration-300 hover:scale-105 hover:bg-[#604e61]'
+              >
+                <FiNavigation />
+                الحصول على الاتجاهات
+              </a>
+            </div>
           </div>
         </motion.div>
       </Container>

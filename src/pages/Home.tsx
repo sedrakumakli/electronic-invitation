@@ -1,6 +1,5 @@
 import Hero from '../components/Hero/Hero';
 import { useEffect, useRef, useState } from 'react';
-import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import Project from '../components/Project/Project';
 import Countdown from '../components/Countdown/Countdown';
 import EventInfo from '../components/EventInfo/EventInfo';
@@ -9,6 +8,7 @@ import UniversityJourney from '../components/UniversityJourney/UniversityJourney
 import Footer from '../components/Footer';
 import EnvelopeOpening from '../components/Envelope/EnvelopeOpening';
 import GraduationMemories from '../components/GraduationMemories/GraduationMemories';
+import { FiVolume2 } from 'react-icons/fi';
 
 const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
 
@@ -89,7 +89,7 @@ const Home = () => {
     z-50
   '
           >
-            {isPlaying ? <FaVolumeUp /> : <FaVolumeMute />}
+            {isPlaying ? <FiVolume2 /> : <FiVolume2 className='opacity-30' />}
           </button>
         </>
       )}
