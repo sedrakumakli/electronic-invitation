@@ -66,7 +66,7 @@ const itemVariants: Variants = {
 
 const Timeline = () => {
   return (
-    <section className='bg-[#F7F4F8] py-24 overflow-hidden'>
+    <section className='bg-[#F8F3EC] py-24 overflow-hidden'>
       <Container>
         {/* TITLE */}
         <motion.div

@@ -203,7 +203,7 @@ left-1/2
 top-0
 h-full
 w-[2px]
-bg-[#b9a4b5]/40
+bg-[#7B1E2B]/40
 hidden md:block
 '
           />

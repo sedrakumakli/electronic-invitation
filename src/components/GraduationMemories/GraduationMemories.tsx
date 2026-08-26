@@ -290,7 +290,7 @@ const GraduationMemories = () => {
           >
             <div className='relative overflow-hidden rounded-3xl'>
               <img
-                src='/memory.jpg'
+                src='/13.jpg'
                 alt='ذكريات يوم التخرج'
                 className='
                   w-full
@@ -687,7 +687,7 @@ const GraduationMemories = () => {
                     justify-center
                     gap-2
                     rounded-xl
-                    bg-[#715E72]
+                    bg-[#7B1E2B]
                     px-6
                     py-3.5
                     font-cairo
@@ -696,7 +696,7 @@ const GraduationMemories = () => {
                     transition-all
                     duration-300
                     hover:-translate-y-0.5
-                    hover:bg-[#624F63]
+                    hover:bg-[#641923]
                     hover:shadow-lg
                     disabled:cursor-not-allowed
                     disabled:opacity-60

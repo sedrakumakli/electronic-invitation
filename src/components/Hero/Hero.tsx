@@ -5,7 +5,7 @@ import type { Variants } from 'framer-motion';
 import { useScreen } from '../../context/ScreenSizeContext';
 
 const desktopImages = [
-  '/u14.webp',
+  '/16.jpg',
   '/u16.webp',
   '/u9.webp',
   '/u10.webp',
@@ -15,11 +15,11 @@ const desktopImages = [
 ];
 
 const mobileImages = [
-  '/u14.webp',
-  '/u15.webp',
+  '/17.jpg',
+  '/20.jpg',
   '/u9.webp',
-  '/u11.webp',
-  '/u12.webp',
+  '/3.jpg',
+  '/16.jpg',
   '/u17.webp',
   '/u18.webp',
 ];
@@ -186,7 +186,7 @@ const Hero = () => {
           variants={itemVariants}
           className='font-reef text-5xl text-white md:text-7xl lg:text-8xl'
         >
-          المهندسة سلاف عبدالحليم الفارس
+         المهندسة سدرة محمد طاهر قومقلي
         </motion.h1>
 
         {/* MOTHER */}
@@ -194,7 +194,7 @@ const Hero = () => {
           variants={itemVariants}
           className='mt-4 font-cairo text-lg text-[#fffc]'
         >
-          والدتي نجوى نديم شربك
+         والدتي رحاب السيوفي
         </motion.p>
 
         {/* DECORATION */}
@@ -235,7 +235,7 @@ const Hero = () => {
         <motion.a
           variants={itemVariants}
           href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-            'مناقشة مشروع تخرج - سلاف الفارس',
+            'مناقشة مشروع تخرج - سدرة',
           )}&dates=20260830T110000/20260830T120000&ctz=Asia/Damascus&details=${encodeURIComponent(
             'مناقشة مشروع التخرج بعنوان: نظام إدارة حملات التبرع - أثر',
           )}&location=${encodeURIComponent(
@@ -243,7 +243,7 @@ const Hero = () => {
           )}`}
           target='_blank'
           rel='noopener noreferrer'
-          className='mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#715E72]/80 px-8 py-3 font-cairo font-semibold tracking-wide text-[#F7F4F8] transition-all duration-300 hover:scale-[1.03] hover:bg-[#715E72]/90 hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
+          className='mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#7B1E2B]/80 px-8 py-3 font-cairo font-semibold tracking-wide text-[#F7F4F8] transition-all duration-300 hover:scale-[1.03] hover:bg-[#7B1E2B]/90 hover:shadow-[0_0_20px_rgba(113,94,114,0.4)] active:scale-[0.98]'
         >
           إضافة إلى التقويم
         </motion.a>

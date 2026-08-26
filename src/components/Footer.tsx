@@ -4,7 +4,7 @@ import Container from './Container';
 
 const Footer = () => {
   return (
-    <footer className='relative overflow-hidden bg-[#2E2A31] py-16'>
+    <footer className='relative overflow-hidden bg-[#7B1E2B] py-16'>
       {/* soft decoration */}
       <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(113,94,114,0.35),transparent_45%)]' />
 
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
 
           <p className='font-cairo text-sm text-[#b9a4b5]'>
-            © 2026 Solaf Alfares
+            © 2026 Sedra Komakli
           </p>
 
           <p className='mt-2 font-cairo text-sm text-[#b9a4b5]'>

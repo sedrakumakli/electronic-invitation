@@ -152,7 +152,7 @@ const UniversityJourney = () => {
               px-8
               py-3
               rounded-xl
-              bg-[#715E72]
+              bg-[#7B1E2B]
               text-white
               font-cairo
               font-semibold

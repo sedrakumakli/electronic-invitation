@@ -64,7 +64,7 @@ const Countdown = () => {
       />
 
       {/* MAIN OVERLAY (soft lavender + depth) */}
-      <div className='absolute inset-0 bg-[#715E72]/40' />
+      <div className='absolute inset-0 bg-[#7B1E2B]/40' />
 
       {/* SECOND OVERLAY (blur depth layer) */}
       <div className='absolute inset-0 backdrop-blur-[2px] bg-white/10' />

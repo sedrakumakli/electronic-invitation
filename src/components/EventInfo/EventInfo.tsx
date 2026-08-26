@@ -33,7 +33,7 @@ export default function EventInfo() {
   const isDesktop = screenSize === 'desktop';
 
   return (
-    <section id='event-info' className='bg-[#F7F4F8] py-24 overflow-hidden'>
+    <section id='event-info' className='py-24 overflow-hidden'>
       <Container>
         <div className='grid lg:grid-cols-2 gap-12 items-center'>
           {/* LEFT */}
@@ -139,7 +139,7 @@ export default function EventInfo() {
                 href='https://www.google.com/maps/dir/?api=1&destination=القاعة%20العاشرة%20-%20كلية%20الهندسة%20المعلوماتية%20-%20مبنى%20كلية%20العلوم%20-%20جامعة%20حمص'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-3 rounded-xl bg-[#715E72] px-7 py-3 text-white font-cairo transition-all duration-300 hover:scale-105 hover:bg-[#604e61]'
+                className='inline-flex items-center gap-3 rounded-xl bg-[#7B1E2B] px-7 py-3 text-white font-cairo transition-all duration-300 hover:scale-105 hover:bg-[#7B1E2B]'
               >
                 <FiNavigation />
                 الحصول على الاتجاهات

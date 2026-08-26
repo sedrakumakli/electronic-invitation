@@ -10,7 +10,7 @@ import EnvelopeOpening from '../components/Envelope/EnvelopeOpening';
 import GraduationMemories from '../components/GraduationMemories/GraduationMemories';
 import { FiVolume2 } from 'react-icons/fi';
 
-const audio = '/graduationSoundTrack.mp3'; // حطي ملفك هون
+const audio = '/grad.mp3'; // حطي ملفك هون
 
 const Home = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -77,14 +77,14 @@ const Home = () => {
     right-6
     w-12 h-12
     rounded-full
-    bg-[#715E72]/40
+    bg-[#7B1E2B]/40
     backdrop-blur-md
     border border-white/10
     flex items-center justify-center
     text-[#F7F4F8]
     transition-all
     duration-300
-    hover:bg-[#715E72]/60
+    hover:bg-[#7B1E2B]/60
     hover:scale-110
     z-50
   '
