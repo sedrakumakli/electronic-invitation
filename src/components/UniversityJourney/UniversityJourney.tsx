@@ -142,7 +142,7 @@ const UniversityJourney = () => {
               والامتنان، وأتطلع لما تحمله الخطوات القادمة من فرص وتجارب جديدة.
             </motion.p>
 
-            <motion.a
+           {/*  <motion.a
               variants={item}
               href='https://portfolio-nine-zeta-56.vercel.app/'
               target='_blank'
@@ -163,7 +163,7 @@ const UniversityJourney = () => {
               '
             >
               اكتشف عالمي البرمجي
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </div>
       </Container>
