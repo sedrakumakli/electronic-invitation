@@ -239,7 +239,7 @@ const GraduationMemories = () => {
                 mt-8
                 font-cairo
                 text-sm
-                text-[#715E72]
+                text-[#7B1E2B]
                 underline
                 underline-offset-4
               '
@@ -491,9 +491,9 @@ const GraduationMemories = () => {
                       outline-none
                       transition-all
                       placeholder:text-[#B9B1BA]
-                      focus:border-[#715E72]
+                      focus:border-[#7B1E2B]
                       focus:ring-2
-                      focus:ring-[#715E72]/10
+                      focus:ring-[7B1E2B]/10
                     '
                   />
                 </motion.div>
