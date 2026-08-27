@@ -198,7 +198,7 @@ const Timeline = () => {
                   flex items-center justify-center
                   ${
                     index === timeline.length - 1
-                      ? 'bg-[#715E72] text-white'
+                      ? 'bg-[#7B1E2B] text-white'
                       : 'bg-[#F7F4F8] border-2 border-[#e6c7a1] text-[#e6c7a1]'
                   }
                   `}
@@ -210,7 +210,7 @@ const Timeline = () => {
                   {item.year}
                 </span>
 
-                <h3 className='mt-2 font-cairo font-semibold text-[#715E72]'>
+                <h3 className='mt-2 font-cairo font-semibold text-[#2F2523]'>
                   {item.title}
                 </h3>
               </motion.div>
